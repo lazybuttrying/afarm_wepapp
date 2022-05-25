@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>FlightInfo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item style="display: flex">
+      <ion-label style="flex: 1"> ⚠️ 주의 ⚠️ </ion-label>
+      <ion-button style="flex: 1" [routerLink]="['/flight-menual']"
+        >메뉴얼 다시보기</ion-button
+      >
+    </ion-item>
+    <ion-list>
+      <ion-item lines="none">
+        <p>밭 가로 세로 길이는 아래 버튼을 이용해주세요</p>
+      </ion-item>
+
+      <ion-button [routerLink]="['/map']" expand="block">
+        지도에서 길이 측정하기</ion-button
+      >
+
+      <ion-item>
+        <p>그 외의 경우 직접 측정해주세요</p>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+
+  <form>
+    <ion-grid *ngFor="let fieldProps of inputForm.slice(1,4)">
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label position="floating">{{fieldProps[0].label}}</ion-label>
+            <ion-input
+              [name]="fieldProps[0].label"
+              [type]="number"
+              [(ngModel)]="fieldProps[0].value"
+              [placeholder]="fieldProps[0].placeholder"
+              [required]="true"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+
+        <ion-col *ngIf="fieldProps[1].label !== ''">
+          <ion-item>
+            <ion-label position="floating">{{fieldProps[1].label}}</ion-label>
+            <ion-input
+              [name]="fieldProps[1].label"
+              [type]="number"
+              [(ngModel)]="fieldProps[1].value"
+              [placeholder]="fieldProps[1].placeholder"
+              [required]="true"
+            ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-button type="submit" expand="block" (click)="register()"
+      >설정</ion-button
+    >
+  </form>
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Welcome to Afarm!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <!-- <div style="flex-direction: column; display: flex; height: 100%"> -->
+    <!-- <div style="flex-direction: row; display: flex; flex: 2"> -->
+    <!-- style="flex: 1; height: 100%" -->
+    <ion-row>
+      <ion-col>
+        <ion-button [routerLink]="['/drone']"> 드론 설정 </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button [routerLink]="['/quality']"> 품질 확인 </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button [routerLink]="['/first-manual']"> 사용 설명서 </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

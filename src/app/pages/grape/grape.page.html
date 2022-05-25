@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>촬영 결과</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="content">
+    <ion-list>
+        <ion-item>
+            <ion-label> 총 포도 수 : {{qualityService.num.grape}}개 </ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>
+                평균 포도알 수 : {{qualityService.num.berry/qualityService.num.grape}}개
+            </ion-label>
+        </ion-item>
+    </ion-list>
+
+    <br />
+
+    <ion-grid>
+        <ion-row style="border-bottom: 2px solid black">
+            <ion-col>등급</ion-col>
+            <ion-col>포도알</ion-col>
+            <ion-col>불량포도알</ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngFor="let grape of qualityService.grapes">
+        <ion-row id="grape" (click)="imageEnLarge(grape.img)"
+        [ngStyle] = "{'background-color':grape.pruning && grape.berry>20 ? '#D3DC96' : none}">
+            <ion-col>{{grape.maturity}}</ion-col>
+            <ion-col>{{grape.berry}}</ion-col>
+            <ion-col>{{grape.sick_berry}}</ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

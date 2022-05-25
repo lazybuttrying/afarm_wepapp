@@ -1,0 +1,8 @@
+{
+  "name": "afarm",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "af07843c"
+}

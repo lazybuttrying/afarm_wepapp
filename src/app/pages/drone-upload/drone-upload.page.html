@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>드론 추가하기</ion-title>
+  </ion-toolbar>
+</ion-header>
+기
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">드론 이름</ion-label>
+    <ion-input type="text" [(ngModel)]="product_name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">구역 번호</ion-label>
+    <ion-input type="number" [(ngModel)]="zone"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <img
+      src="{{imageTempUrl}}"
+      max-width="200px"
+      max-height="400px"
+      onerror="this.src='../../../assets/img/noimg.jpg'"
+    />
+  </ion-item>
+  <ion-item>
+    <ion-button expand="full" (click)="f.click()">
+      <ion-icon name="camera"></ion-icon>
+      Select File
+    </ion-button>
+    <input
+      class="ion-hide"
+      #f
+      type="file"
+      (change)="imgSelectHandler($event)"
+      id="file-input"
+      accept="image"
+    />
+  </ion-item>
+
+  <br />
+  <ion-button expand="block" (click)="upload()">추가</ion-button>
+</ion-content>

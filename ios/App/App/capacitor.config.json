@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "afarm",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

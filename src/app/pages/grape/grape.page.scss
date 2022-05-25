@@ -1,0 +1,28 @@
+ion-list {
+    max-width: 700px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+ion-item {
+    text-align: center;
+}
+
+ion-grid {
+    max-width: 700px;
+}
+
+.info {
+    border-bottom: 3px solid var(--ion-color-medium);
+    font-size: 3em;
+}
+
+#grape {
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--ion-color-medium);
+    cursor: pointer;
+}
+
+ion-col {
+    text-align: center;
+}

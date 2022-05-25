@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>밭 거리 측정</ion-title>
+  </ion-toolbar>
+
+  <ion-grid style="background-color: white">
+    <ion-row>
+      <ion-button> 동영상 가이드 </ion-button>
+    </ion-row>
+    <ion-row>
+      <ion-button (click)="setViewToCurrentLoc()">
+        현재 위치로 이동하기
+      </ion-button>
+    </ion-row>
+    <ion-row>
+      <input
+        type="text"
+        id="search_input"
+        placeholder="Search..."
+        width="100%"
+      />
+      <ion-col>
+        <ion-button (click)="back()" shape="round">돌아가기</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="savePath()" shape="round"
+          >거리 확인하기</ion-button
+        >
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="initMap()" shape="round">다시 그리기</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label>첫번째 거리 : {{dist1}} km</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>두번째 거리 : {{dist2}} km</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-header>
+
+<ion-content>
+  <div id="map"></div>
+
+  <div class="g-sign-in hidden">
+    <span class="label">Sign in with:</span>
+    <div class="button">
+      <span class="icon"></span>
+      <span class="button-text">Google</span>
+    </div>
+  </div>
+
+  <div class="tiles-loading"></div>
+</ion-content>

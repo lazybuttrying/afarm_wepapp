@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>드론 목록 조회</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list id="add">
+        <ion-button [routerLink]="['/drone-upload']">드론 추가하기</ion-button>
+    </ion-list>
+      <ion-list *ngFor="let drone of drones">
+        <ion-item>
+            <ion-list>
+                <ion-item>
+                    <img src="{{ drone.product_img }}" />
+                </ion-item>
+                <ion-item>
+                    <ion-label>드론 모델명: {{drone.product_name}}</ion-label>
+                </ion-item>
+
+                <ion-item>
+                    <div margin-vertical text-right>
+                        <ion-button [routerLink]="['/flight-info']" [state]="{droneId: drone.id}">비행 정보 설정</ion-button>
+                        <ion-button id="btn-repairrequest"> 수리 요청 </ion-button>
+                        <ion-button id="btn-changedevice"> 기기 변경 </ion-button>
+                    </div>
+                </ion-item>
+                <ion-item>
+                    <ion-label>구역 번호: {{drone.zone}}</ion-label>
+                </ion-item>
+
+                <ion-item lines="none">
+                    <ion-label>비행 시각 설정</ion-label>
+                    <ion-button (click)="this.selectTime = datt.value;updateTime(drone.id)">저장</ion-button>
+                </ion-item>
+
+                <ion-item>
+                    <ion-datetime #datt hour-cycle="h12" locale="default" value="{{drone.start_time}}" minuteValues="0, 30" presentation="time" (ionChange)="this.selectTime = datt.value"></ion-datetime>
+                </ion-item>
+            </ion-list>
+        </ion-item>
+    </ion-list>
+</ion-content>

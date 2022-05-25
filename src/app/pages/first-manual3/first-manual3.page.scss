@@ -1,0 +1,12 @@
+ion-grid{
+    margin: 50px
+}
+@media (max-width: 500px) { 
+  ion-grid {
+    margin: 10px;
+  }
+}
+footer ion-button {
+    width: calc(100% - 2%);
+    margin: 1%;
+  }

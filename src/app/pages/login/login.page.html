@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>로그인</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="login-content" padding>
+  <ion-row>
+    <ion-col>
+      <!-- <h1 class="logo"></h1> -->
+      <img src="../../../assets/logo/logo.jpg" alt="afarm logo">
+      <p class="description">Afarm을 사용하기 위해 로그인 해주세요.</p>
+    </ion-col>
+  </ion-row>
+
+  <ion-button
+    class="log-in-button"
+    color="danger"
+    expand="block"
+    (click)="doGoogleLogin()"
+  >
+    구글을 통한 로그인
+  </ion-button>
+
+  <ion-item>
+    <ion-label position="floating">아이디</ion-label>
+    <ion-input type="text" [(ngModel)]="user_id"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">비밀번호</ion-label>
+    <ion-input type="password" [(ngModel)]="pw"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="login()">로그인</ion-button>
+  <ion-button expand="block" [routerLink]="['/register']">회원 가입</ion-button>
+</ion-content>
