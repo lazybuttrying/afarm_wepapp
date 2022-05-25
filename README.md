@@ -7,6 +7,19 @@
 ![pagelink](https://user-images.githubusercontent.com/79500842/169014123-9c32db11-4fa2-41d3-9e23-17b83d9ce1e3.png)
 
 
+## Install
+https://ionicframework.com/docs/intro/cli
+- Git
+- NodeJS LTS
+- ionic
+
+## Command
+```bash
+npm install
+ionic serve
+```
+
+
 ## 페이지 별 함수 호출
 
 - Register : 회원가입 페이지
